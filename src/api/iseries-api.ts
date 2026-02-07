@@ -145,6 +145,7 @@ export interface ISeriesApi<
 	 * Sets or replaces series data.
 	 *
 	 * @param data - Ordered (earlier time point goes first) array of data items. Old data is fully replaced with the new one.
+	 * @param allowDuplicates - Whether consecutive data items with the same timestamp are allowed.
 	 * @example Setting data to a line series
 	 * ```js
 	 * lineSeries.setData([
@@ -160,7 +161,7 @@ export interface ISeriesApi<
 	 * ]);
 	 * ```
 	 */
-	setData(data: TData[]): void;
+	setData(data: TData[], allowDuplicates?: boolean): void;
 
 	/**
 	 * Adds new data item to the existing set (or updates the latest item if times of the passed/latest items are equal).
